@@ -1,0 +1,18 @@
+def binary_search(inList):
+    low = 0
+    high = len(inList) -1
+    while low <= high:
+        mid = (low+high)//2
+        upper = inList[mid:high]
+        lower = inList[low:mid-1]
+        if any(lower):
+            inList = lower
+            high = mid-1
+        elif any(upper):
+            inList = upper
+            low = mid
+        else:
+        return mid
+
+        assert low < high
+    return -1
