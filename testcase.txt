@@ -1,0 +1,23 @@
+from binary_search import binary_search
+
+# Test a basic case
+inlist = [0] * 256
+inlist[123] = 1
+assert binary_search(inlist) == 123
+
+# Test a case with odd len
+inlist = [0] * 99
+inlist[20] = 1
+assert binary_search(inlist, 20)
+
+# Test the case with no 1s
+inlist = [0] * 256
+assert binary_search(inlist) == -1
+
+# It's good to test corner cases just in case
+inlist = [0] * 256
+inlist[0] = 1
+assert binary_search(inlist) == 0
+inlist = [0] * 256
+inlist[255] = 1
+assert binary_search(inlist) == 255
